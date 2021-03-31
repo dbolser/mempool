@@ -2,33 +2,28 @@
 
 ## Initialization
 
-In an empty dir create 2 sub-dirs
-
+In an empty directory create 2 sub-directories:
 ```bash
 mkdir -p data mysql/data mysql/db-scripts
 ```
 
-In the `mysql/db-scripts` sub-dir add the `mariadb-structure.sql` file from the mempool repo
+Copy the `mempool/mariadb-structure.sql` file from the mempool repo into `mysql/db-scripts`.
 
-Your dir should now look like that:
+Your directory should now look like this:
 
 ```bash
-$ls -R
-.:
-data mysql
+tree
+.
+├── data
+└── mysql
+    ├── data
+    └── db-scripts
+        └── mariadb-structure.sql
 
-./data:
-
-./mysql:
-data  db-scripts
-
-./mysql/data:
-
-./mysql/db-scripts:
-mariadb-structure.sql
+4 directories, 1 file
 ```
 
-In the main dir add the following `docker-compose.yml`
+Now create the following `docker-compose.yml`:
 
 ```bash
 version: "3.7"
